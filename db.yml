@@ -12,5 +12,10 @@
         name: mysqld
         state: started
         enabled: yes
-
-
+    # Check DB connection
+    - name: Get MySQL version with non-default credentials
+      community.mysql.mysql_info:
+        login_user: root
+        login_password: ExpenseApp@1
+        login_host: db.pdevops72.online
+        filter: version
