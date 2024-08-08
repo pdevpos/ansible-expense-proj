@@ -19,3 +19,11 @@
         login_password: ExpenseApp@1
         login_host: db.pdevops72.online
         filter: version
+
+    - name: Install python packages
+      ansible.builtin.pip:
+        name:
+          - PyMySQL
+        executable: pip3.9
+
+
