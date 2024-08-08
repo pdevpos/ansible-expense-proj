@@ -20,7 +20,7 @@
         login_host: db.pdevops72.online
         filter: version
 
-    - name: Install python packages
+    - name: Install python mysql dependencies
       ansible.builtin.pip:
         name: PyMySQL
         executable: pip3.9
