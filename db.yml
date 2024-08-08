@@ -25,7 +25,12 @@
         login_password: ExpenseApp@1
         login_host: db.pdevops72.online
         filter: version
+      ignore_errors: true
+      register: mysql_root_password
 
+    - name: display mysql root password
+      ansible.builtin.debug:
+        msg: "{{ mysql_root_password }}"
 
 
 
