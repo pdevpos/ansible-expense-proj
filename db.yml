@@ -28,9 +28,14 @@
       ignore_errors: true
       register: mysql_root_password
 
+
     - name: display mysql root password
       ansible.builtin.debug:
         msg: "{{ mysql_root_password }}"
+
+    - name: set mysql root password
+      ansible.builtin.command: mysql_secure_installation --set-root-pass ExpenseApp@1
+      when: mysql_root_password.failed is true
 
 
 
