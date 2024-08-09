@@ -28,5 +28,12 @@
         dest: /tmp/backend.zip
 
 
+    - name: Unarchive a backend code that is already on the remote machine
+      ansible.builtin.unarchive:
+        src: /tmp/backend.zip
+        dest: /app
+
+
+
 
 
