@@ -54,6 +54,15 @@
         src: backend.service
         dest: /etc/systemd/system/backend.service
 
+    - name: Load schema
+      community.mysql.mysql_db:
+        login_user: root
+        login_password: ExpenseApp@1
+        login_host: db.pdevops72.online
+        state: import
+        name: all
+        target: /app/schema/backend.sql
+
 
 
 
