@@ -15,9 +15,9 @@
           - cryptography
         executable: pip3.9
 
-    - name: Install nodejs
+    - name: Install packages
       ansible.builtin.dnf:
-        name: nodejs
+        name: "{{ item }}"
         state: installed
       loop:
         - nodejs
