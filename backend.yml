@@ -1,6 +1,10 @@
 - name: backend configure server
   hosts: backend
   become: yes
+  vars_prompt:
+    - name: mysql_connection_pass
+      prompt: enter expense password
+      private: false
   tasks:
     - name: disable default nodejs
       ansible.builtin.command: dnf module disable nodejs -y
@@ -57,7 +61,7 @@
     - name: Load schema
       community.mysql.mysql_db:
         login_user: root
-        login_password: ExpenseApp@1
+        login_password: "{{ mysql_connection_pass }}"
         login_host: db.pdevops72.online
         state: import
         name: all
