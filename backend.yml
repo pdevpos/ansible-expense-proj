@@ -63,6 +63,16 @@
         name: all
         target: /app/schema/backend.sql
 
+    - name: update backend service
+      ansible.builtin.systemd_service:
+        daemon_reload: true
+
+    - name: start and enable service
+      ansible.builtin.service:
+        name: backend
+        state: started
+        enabled: yes
+
 
 
 
