@@ -13,3 +13,7 @@
         name: nodejs
         state: installed
 
+    - name: Create a user expense
+      ansible.builtin.user:
+        name: expense
+
