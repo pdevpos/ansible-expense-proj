@@ -58,11 +58,11 @@
         src: backend.service
         dest: /etc/systemd/system/backend.service
 
-    - name: Load schema
+    - name: import data into mysql
       community.mysql.mysql_db:
-        login_user: root
+        login_user: "{{ login_user }}"
         login_password: "{{ mysql_connection_pass }}"
-        login_host: db.pdevops72.online
+        login_host: "{{ backend_hosts }}"
         state: import
         name: all
         target: /app/schema/backend.sql
