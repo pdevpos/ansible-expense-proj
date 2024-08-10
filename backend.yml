@@ -31,6 +31,11 @@
       ansible.builtin.user:
         name: expense
 
+    - name: remove a directory
+      ansible.builtin.file:
+        path: /app
+        state: absent
+
     - name: Make a directory
       ansible.builtin.file:
         path: /app
