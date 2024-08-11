@@ -60,8 +60,8 @@
 
     - name: copy backend service
       ansible.builtin.copy:
-        src: backend.service
-        dest: /etc/systemd/system/backend.service
+        src: backend.service.j2
+        dest: /etc/systemd/system/backend.service.j2
 
     - name: import data into mysql
       community.mysql.mysql_db:
